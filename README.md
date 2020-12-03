@@ -110,7 +110,7 @@ The last section in my Powershell profile is the custom console settings. In thi
 
 The only console customization I have in my profile is a function to set the title of the console window. It shows what account the console is running under, whether the console is elevated to administrator permissions, and which version of Powershell the console window is. At one point I had three different versions of Powershell installed and not all of the scripts I was running worked in all versions. Listing the version of Powershell in the console title was an easy way to differentiate between console windows.
 
-I don't have an example here, but in a past job I had a credential securely stored in an encrypted file that my profile decrypted into a Credential variable that I could use easier in the Powershell console. This way I didn't have to type in the very complicated password multiple times in a row. You could also use it to save some constant values that you use frequently.
+I don't have an example here, but in a past job I had a credential securely stored in an encrypted file that my profile script decrypted into a Credential variable that I could use easier in the Powershell console. This way I didn't have to type in the very complicated password multiple times in a row. You could also use it to save some constant values that you use frequently.
 
 
 ## Conclusion
