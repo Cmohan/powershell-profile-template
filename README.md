@@ -2,7 +2,7 @@
 
 The Powershell console has a settings script that you can use to customize your experience. You can use it to load the same modules everytime you run the console, create custom commands, or customize the console itself.
 
-If you've never worked with the different Powershell profiles, [this article](https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/) explains the six different types and when which profile is used. Personally, I only use the CurrentUserAllHosts profile. I haven't found a use case where I would need the other types yet.
+If you've never worked with the different Powershell profiles, [this article](https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/) explains the six different types and when each profile is used. Personally, I only use the CurrentUserAllHosts profile. I haven't found a use case where I would need the other types yet.
 
 
 ### Profile Template
@@ -108,7 +108,7 @@ else
 
 The last section in my Powershell profile is the custom console settings. In this section you can modify environment variables, change the look of your console window, or initialize custom variables. Before I reorganized my code files, I had my custom modules stored in a different folder than the standard Powershell module folder. In order to access it, I had to modify my `PSModulePath` variable to add that folder to the list.
 
-The only console customization I have in my profile is a function to set the title of the console window. It shows what account the console is running under, whether the console is elevated to administrator permissions, and which version of Powershell the console window is. At one point I had three different versions of Powershell installed and not all of the scripts I was running worked in all versions.
+The only console customization I have in my profile is a function to set the title of the console window. It shows what account the console is running under, whether the console is elevated to administrator permissions, and which version of Powershell the console window is. At one point I had three different versions of Powershell installed and not all of the scripts I was running worked in all versions. Listing the version of Powershell in the console title was an easy way to differentiate between console windows.
 
 I don't have an example here, but in a past job I had a credential securely stored in an encrypted file that my profile decrypted into a Credential variable that I could use easier in the Powershell console. This way I didn't have to type in the very complicated password multiple times in a row. You could also use it to save some constant values that you use frequently.
 
