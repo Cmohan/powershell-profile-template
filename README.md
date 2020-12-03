@@ -1,7 +1,4 @@
----
-title: Customizing your Powershell Profile
-tags: powershell, windowsterminal, productivity
----
+# Customizing your Powershell Profile
 
 The Powershell console has a settings script that you can use to customize your experience. You can use it to load the same modules everytime you run the console, create custom commands, or customize the console itself.
 
@@ -9,7 +6,7 @@ If you've never worked with the different Powershell profiles, [this article](ht
 
 ### Profile Template
 
-{% github cmohan/powershell-profile-template %}
+[Click here](/exampleProfile.ps1) to view the profile template.
 
 ## Profile Sections
 
