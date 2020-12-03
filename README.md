@@ -4,22 +4,23 @@ The Powershell console has a settings script that you can use to customize your 
 
 If you've never worked with the different Powershell profiles, [this article](https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/) explains the six different types and when which profile is used. Personally, I only use the CurrentUserAllHosts profile. I haven't found a use case where I would need the other types yet.
 
+
 ### Profile Template
 
-[Click here](/exampleProfile.ps1) to view the profile template.
+[Click here](/exampleProfile.ps1) to view the whole profile template file.
 
 ## Profile Sections
 
 I split my profile into different sections to keep it organized:
 
-1. Modules
-2. Accelerators
-3. Custom Functions
-4. Custom Console Settings
+1. [Modules](#modules)
+2. [Accelerators](#accelerators)
+3. [Custom Functions](#functions)
+4. [Custom Console Settings](#console-settings)
 
-### Modules
+### <a id="modules">Modules</a>
 
-```
+```powershell
 # region Modules - must be first
 
 using module CatMods
@@ -31,9 +32,9 @@ using module ImportExcel
 This Modules has to be the first as the modules won't load if other commands are run before the `using` statements. This section can be used to automatically load in locally installed modules including custom modules you've written.
 
 
-### Accelerators
+### <a id="accelerators">Accelerators</a>
 
-```
+```powershell
 #region Accelerators
 
 $type = [PowerShell].Assembly.GetType('System.Management.Automation.TypeAccelerators')
@@ -46,9 +47,9 @@ $type::Add('DateTimeConverter', [Management.ManagementDateTimeConverter])
 Powershell becomes even more versatile and powerful when you start incorporating .NET data types. The downside is, that to use those data types, you have to specify the exact location of the data type and those can get a bit convoluted. Accelerators allow you to create a shortcut keyword that you can use instead. I frequently use the `ArrayList` data type instead of the native Powershell arrays and `ArrayList` is easier to remember than `System.Collections.ArrayList`.
 
 
-### Custom Functions
+### <a id="functions">Custom Functions</a>
 
-```
+```powershell
 # region Custom Functions
 
 function Start-PSAdmin ()
@@ -78,9 +79,9 @@ Here are the three I use the most often:
 - The `Open-GitBash` is a new function I created only a few months ago. It opens a new Windows Terminal console set to the Git Bash profile I configured and opens it to the same working directory as the Powershell console was using. Recently, I was working on a Powershell application that was stored on a server and getting to that folder in the Git Bash console was a bit of a slog. Every tab complete took 10 to 15 seconds to load. Since I usually already had a Powershell console open to that working directory, this function let me access the Git Bash significantly faster.
 
 
-### Custom Console Settings
+### <a id="console-settings">Custom Console Settings</a>
 
-```
+```powershell
 # region Custom Console Settings
 
 $env:PSModulePath += ";C:\Users\catherine.mohan\Documents\Git\WindowsPowershell\Modules"
